@@ -1,14 +1,19 @@
 import Header from "./Header";
 import Note from "./Note";
 import Footer from "./Footer";
+import notes from "../notes";
+
+
 function App() {
   return (
     <div>
-      <Header/>
-      <Note/>
-      <Footer/>
+      <Header />
+      {notes.map((item) => { 
+        return (
+        <Note key={item.key} title={item.title} content={item.content} />);
+      })}
+      <Footer />
     </div>
-
   );
 }
 
